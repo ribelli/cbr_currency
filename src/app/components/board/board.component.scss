@@ -1,0 +1,43 @@
+.c-table {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    border-bottom: 1px solid #CDD0D8;
+    background: whitesmoke;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+
+    @media all and (min-width: 768px){
+      font-size: 14px;
+    }
+
+    & > .cell {
+      flex: 1 0;
+      padding: 12px 3px;
+
+      &._name {
+        font-weight: 500;
+
+        @media all and (min-width: 768px){
+          min-width: 240px;
+        }
+      }
+
+      &._nominal {
+        display: none;
+
+        @media all and (min-width: 768px) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .filter {
+    padding: 15px;
+    border: 1px solid #e2e2e2;
+  }
+}

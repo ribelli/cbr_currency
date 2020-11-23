@@ -1,0 +1,8 @@
+<div class="c-row"
+     [ngClass]="{'_open': item.isViewContainer}">
+  <div class="c-row__cell"
+       [ngClass]="{'_name': col === 'Name', '_value': col === 'Value', '_nominal': col === 'Nominal'}"
+       *ngFor="let col of columns">
+    {{ col === 'Value' ? (item[col] | number : '1.2-2') : item[col] }}
+  </div>
+</div>

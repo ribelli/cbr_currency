@@ -1,0 +1,16 @@
+<div class="c-table">
+    <div class="filter">Euro price today : {{this.currentEUR | number : '1.2-2'}}</div>
+    <div *ngIf="!listOfCurrencies">{{emptyData}}</div>
+    <div class="c-table__header">
+      <div class="cell"
+           [ngClass]="{'_name': column === 'Name', '_nominal': column === 'Nominal'}"
+           *ngFor="let column of columns">
+        {{column}}
+      </div>
+    </div>
+    <app-row *ngFor="let currency of listOfCurrencies; let i = index;"
+             [item]="currency"
+             [columns]="columns"
+             (click)="setStateSubRow(i)">
+    </app-row>
+</div>

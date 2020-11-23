@@ -1,0 +1,53 @@
+.c-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  text-decoration: none;
+  overflow-x: scroll;
+  padding: 5px 0;
+
+  &:hover, &:active, :focus {
+    background-color: #b3c0ff;
+    cursor: pointer;
+  }
+
+  &._open > ._name {
+    text-overflow: unset;
+    white-space: pre-line;
+    overflow: visible;
+  }
+
+  @media all and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  &__cell {
+    flex: 1 0;
+
+    &._name {
+      font-weight: 500;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media all and (min-width: 768px) {
+        min-width: 240px;
+      }
+    }
+
+    &._nominal {
+      display: none;
+
+      @media all and (min-width: 768px) {
+        display: flex;
+      }
+    }
+
+    &._value {
+      color: #212121;
+      font-weight: 500;
+    }
+  }
+}
